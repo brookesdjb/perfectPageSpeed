@@ -3,6 +3,21 @@
 <head>
 	<meta charset="utf-8">
 	<title>Perfect Page Speed Score</title>
+  <style>
+  html{
+    height:100%;
+
+  }
+  body{
+    height:100%;
+  }
+  .grid-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  </style>
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -14,7 +29,21 @@
     <h1>Perfect Page Speed Score</h1>
 
 </div>
-<link async rel="stylesheet" href="css/all.min.css">
-
+<noscript id="deferred-styles">
+  <link async rel="stylesheet" href="css/all.min.css">
+ </noscript>
+ <script>
+   var loadDeferredStyles = function() {
+     var addStylesNode = document.getElementById("deferred-styles");
+     var replacement = document.createElement("div");
+     replacement.innerHTML = addStylesNode.textContent;
+     document.body.appendChild(replacement)
+     addStylesNode.parentElement.removeChild(addStylesNode);
+   };
+   var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+       window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+   if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+   else window.addEventListener('load', loadDeferredStyles);
+ </script>
 </body>
 </html>
