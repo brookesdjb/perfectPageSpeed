@@ -1,41 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Perfect Page Speed Score</title>
-  <style>
-  html{
-    height:100%;
 
-  }
-  body{
-    height:100%;
-  }
-  .grid-container {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+<head>
+  <meta charset="utf-8">
+  <title>Perfect Page Speed Score</title>
+  <style>
+    html {
+      height: 100%;
+
+    }
+
+    body {
+      height: 100%;
+    }
+
+    .container {
+      height: 100%;
+      /* display: flex; */
+      /* justify-content: center;
+    align-items: center; */
+    }
+
+    .grid-tab-container {
+      display: grid;
+      grid-column-gap: 50px;
+      grid-template-columns: auto auto auto auto;
+      height: 20px;
+    }
+
+    .grid-content-container {
+      display: grid;
+      grid-template: auto;
+      text-align: center;
+      height: 200px;
+    }
+
+    .grid-tabs-holder {
+      width: 100%;
+      /* display: grid;
+      grid-template: auto auto auto auto; */
+
+      /* grid-template: auto; */
+    }
+    .tabs{
+      display:none;
+    }
+    /* .tab{display:none;} */
   </style>
-	<!--[if IE]>
+  <!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
 
 <body id="home">
-<div class="grid-container">
+  <div class="container">
 
     <h1>Perfect Page Speed Score</h1>
+    <br />
+    <div class="tabs-holder">
 
-</div>
-<link async rel="preload" rel="stylesheet" href="css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-<noscript id="deferred-styles">
+      <div class="grid-tab-container">
+        <div class="tab" id="1" onclick="toggleThisTab('tab-1')">
+          Tab 1
+        </div>
+        <div class="tab" id="2" onclick="toggleThisTab('tab-2')">
+          Tab 2
+        </div>
+        <div class="tab" id="3" onclick="toggleThisTab('tab-3')">
+          Tab 3
+        </div>
+        <div class="tab" id="4" onclick="toggleThisTab('tab-4')">
+          Tab 4
+        </div>
+      </div>
+      <br />
+      <div class="grid-content-container">
+
+        <div class="tabs" id="tab-1">
+          Tab Content 1
+        </div>
+        <div class="tabs" id="tab-2">
+          Tab Content 2
+        </div>
+        <div class="tabs" id="tab-3">
+          Tab Content 3
+        </div>
+        <div class="tabs" id="tab-4">
+          Tab Content 4
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <link async rel="preload" rel="stylesheet" href="css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <script async rel="preload" src="dist/bundle.js" as="script" onload="this.onload=null;this.rel='script'"></script>
+  <noscript id="deferred-styles">
   <link rel="stylesheet" href="css/all.min.css">
+  <script src = "dist/bundle.js"></script>
+
  </noscript>
- <script>
- !function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
- </script>
+  
+  <script>
+    ! function(t) {
+      "use strict";
+      t.loadCSS || (t.loadCSS = function() {});
+      var e = loadCSS.relpreload = {};
+      if (e.support = function() {
+          var e;
+          try {
+            e = t.document.createElement("link").relList.supports("preload")
+          } catch (t) {
+            e = !1
+          }
+          return function() {
+            return e
+          }
+        }(), e.bindMediaToggle = function(t) {
+          var e = t.media || "all";
+
+          function a() {
+            t.media = e
+          }
+          t.addEventListener ? t.addEventListener("load", a) : t.attachEvent && t.attachEvent("onload", a), setTimeout(function() {
+            t.rel = "stylesheet", t.media = "only x"
+          }), setTimeout(a, 3e3)
+        }, e.poly = function() {
+          if (!e.support())
+            for (var a = t.document.getElementsByTagName("link"), n = 0; n < a.length; n++) {
+              var o = a[n];
+              "preload" !== o.rel || "style" !== o.getAttribute("as") || o.getAttribute("data-loadcss") || (o.setAttribute("data-loadcss", !0), e.bindMediaToggle(o))
+            }
+        }, !e.support()) {
+        e.poly();
+        var a = t.setInterval(e.poly, 500);
+        t.addEventListener ? t.addEventListener("load", function() {
+          e.poly(), t.clearInterval(a)
+        }) : t.attachEvent && t.attachEvent("onload", function() {
+          e.poly(), t.clearInterval(a)
+        })
+      }
+      "undefined" != typeof exports ? exports.loadCSS = loadCSS : t.loadCSS = loadCSS
+    }("undefined" != typeof global ? global : this);
+  </script>
 </body>
+
 </html>

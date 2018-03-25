@@ -71,3 +71,10 @@ table{
     $MAIN
 \*------------------------------------*/
 /* GO! */
+.closed{
+  display: none!important;
+  background: red;
+}
+.open{
+  display: block;
+}

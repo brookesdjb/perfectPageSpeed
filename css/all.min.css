@@ -1,1 +1,1 @@
-body,div,h1,h2,h3,h4,h5,h6,html{margin:0;padding:0;border:0;outline:0;font-size:100%;font:inherit;vertical-align:baseline}body{line-height:1}html{height:100%}body{height:100%}.grid-container{height:100%;display:flex;justify-content:center;align-items:center}
+a,body,center,div,h1,h2,h3,h4,h5,h6,html,var{margin:0;padding:0;border:0;outline:0;font-size:100%;font:inherit;vertical-align:baseline}body{line-height:1}.closed{display:none!important}.open{display:block}
